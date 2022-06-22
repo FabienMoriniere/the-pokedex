@@ -19,7 +19,7 @@ const filteredList = computed<Pokemon[]>(() => {
   }
   return pokelist.value.filter(
     (pokemon) =>
-      pokemon.name.includes(searchName.value) ||
+      pokemon.name.replace(/\d+/g, "").includes(searchName.value) ||
       `${getPokemonId(pokemon)}` === searchName.value
   );
 });
@@ -29,10 +29,10 @@ const filteredList = computed<Pokemon[]>(() => {
   <input type="text" v-model="searchName" name="search" />
   <PokeProfile
     v-for="pokemon of filteredList"
-    :key="pokemon.name"
     class="pokemon-card"
+    :key="pokemon.name"
     :pokemon="pokemon"
-  ></PokeProfile>
+  />
 </template>
 
 <style>

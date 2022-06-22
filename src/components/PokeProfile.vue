@@ -23,7 +23,11 @@ onMounted(async () => {
 
 <template>
   <div class="pokemon-card">
-    <img :src="getPokemonSpriteSrc(pokemon)" :alt="`picture of ${pokemon.name} `" width="100" />
+    <img
+      :src="getPokemonSpriteSrc(pokemon)"
+      :alt="`picture of ${pokemon.name}`"
+      width="100"
+    />
     <span>{{ pokemon.name }}</span>
     <span>{{ getPokemonId(pokemon) }}</span>
     <span>{{ pokeType }}</span>
