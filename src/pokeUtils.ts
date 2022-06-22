@@ -1,4 +1,4 @@
-export const baseUrl = "https://pokeapi.co/api/v2/pokemon/";
+export const baseUrl = "https://pokeapi.co/api/v2/pokemon";
 export interface Pokemon {
   url: string;
   name: string;
